@@ -23,7 +23,7 @@
 | rank_bonus_id  | integer    | null: false                    |
 | top_bonus_id   | integer    | null: false                    |
 | rate_id        | integer    | null: false                    |
-| chip           | integer    | null: false                    |
+| chip           | integer    |                                |
 | user_id        | references | null: false, foreign_key: true |
 
 ### Association
