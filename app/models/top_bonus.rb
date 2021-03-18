@@ -5,3 +5,4 @@ class TopBonus < ActiveHash::Base
         { id: 1, name: "3万点返し", basic: 300 },
         { id: 2, name: "なし", basic: 250 }
     ] 
+end
