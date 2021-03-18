@@ -19,7 +19,7 @@
 | -------------- | ---------- | ------------------------------ |
 | guest1         | string     | null: false                    |
 | guest2         | string     | null: false                    |
-| gustt3         | string     | null: false                    |
+| guest3         | string     | null: false                    |
 | rank_bonus_id  | integer    | null: false                    |
 | top_bonus_id   | integer    | null: false                    |
 | rate_id        | integer    | null: false                    |
