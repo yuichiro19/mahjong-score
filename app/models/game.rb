@@ -12,5 +12,6 @@ class Game < ApplicationRecord
         validates :rank_bonus_id
         validates :top_bonus_id
         validates :rate_id
+        validates :chip
     end
 end
