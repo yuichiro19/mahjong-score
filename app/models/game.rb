@@ -5,7 +5,7 @@ class Game < ApplicationRecord
     belongs_to :rate
     belongs_to :top_bonus
 
-    with_options presence: do
+    with_options presence: true do
         validates :guest1
         validates :guest2
         validates :guest3
