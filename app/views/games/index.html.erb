@@ -1,4 +1,8 @@
-<h1>Mahjong Score Data</h1>
-<%= link_to "ログイン", '#', class: :nav__btn %>
-<%= link_to "新規登録", '#', class: :nav__btn %>
-<%= link_to "新規対局", '#', class: :nav__btn %>
+<h1>Mahjong Score & Data</h1>
+    <% if user_signed_in? %>
+        <%= link_to "新規対局", '#', class: :nav__btn %>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__btn %>
+    <% else %>
+        <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
+        <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
+    <% end%>
