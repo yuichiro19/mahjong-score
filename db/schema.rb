@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2021_03_18_051109) do
     t.integer "rank_bonus_id", null: false
     t.integer "top_bonus_id", null: false
     t.integer "rate_id", null: false
-    t.integer "chip", null: false
+    t.integer "chip", default: 0, null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
