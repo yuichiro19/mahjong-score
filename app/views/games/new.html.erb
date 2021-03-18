@@ -1,2 +1,32 @@
 <h2>新規対局</h2>
+<%= form_with model: @game, local: true do |f| %>
+<div class="game-rule">
+      <div class="weight-bold-text question-text">
+        <span>ゲームルール</span>
+      </div>
+      <div class="form">
+        <div class="weight-bold-text">
+          ウマ
+        </div>
+        <%= f.collection_select(:rank_bonus_id,  RankBonus.all, :id, :name, {}, {class:"select-box", id:"rank-bonus"}) %>
+        <div class="weight-bold-text">
+          オカ
+        </div>
+        <%= f.collection_select(:top_bonus_id, TopBonus.all, :id, :name, {}, {class:"select-box", id:"top-bonus"}) %>
+        <div class="weight-bold-text">
+          レート
+        </div>
+        <%= f.collection_select(:rate_id, Rate.all, :id, :name, {}, {class:"select-box", id:"rate"}) %>
+      </div>
+    </div>
+    <% end %>
+
+
+
+
+
+
+
+
+
 <%= render "shared/footer" %>
