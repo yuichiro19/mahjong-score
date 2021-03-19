@@ -1,0 +1,47 @@
+<h2>新規対局</h2>
+<%= form_with model: @game, local: true do |f| %>
+  <div class="member">
+    <h3>メンバー</h3>
+      <div class="field">
+        <%= f.label :guest1, "ゲスト1" %><br />
+        <%= f.text_field :guest1, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= f.label :guest2, "ゲスト2" %><br />
+        <%= f.text_field :guest2 %>
+      </div>
+      <div class="field">
+        <%= f.label :guest3, "ゲスト3" %><br />
+        <%= f.text_field :guest3 %>
+      </div>
+  </div>
+  <div class="game-rule">
+    <div class="weight-bold-text question-text">
+      <h3>ゲームルール</h3>
+    </div>
+    <div class="form">
+      <div class="weight-bold-text">
+        ウマ
+      </div>
+      <%= f.collection_select(:rank_bonus_id,  RankBonus.all, :id, :name, {}, {class:"select-box", id:"rank-bonus"}) %>
+      <div class="weight-bold-text">
+        オカ
+      </div>
+      <%= f.collection_select(:top_bonus_id, TopBonus.all, :id, :name, {}, {class:"select-box", id:"top-bonus"}) %>
+      <div class="weight-bold-text">
+        レート
+      </div>
+      <%= f.collection_select(:rate_id, Rate.all, :id, :name, {}, {class:"select-box", id:"rate"}) %>
+      <div class="weight-bold-text">
+        チップ
+      </div>
+      <%= f.number_field :chip, value: 0 %>
+    </div>
+  </div>
+  <div class="sell-btn-contents">
+    <%= f.submit "開局" ,class:"sell-btn" %>
+    <%=link_to 'もどる', root_path, class:"back-btn" %>
+  </div>
+<% end %>
+
+<%= render "shared/footer" %>
