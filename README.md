@@ -33,22 +33,22 @@
 
 ## scores テーブル
 
-| Column       | Type       | Options                        |
-| ------------ | ---------- | ------------------------------ |
-| user_score   | integer    | null: false                    |
-| guest1_score | integer    | null: false                    |
-| guest2_score | integer    | null: false                    |
-| guest3_score | integer    | null: false                    |
-| user_rank    | integer    | null: false                    |
-| guest1_rank  | integer    | null: false                    |
-| guest2_rank  | integer    | null: false                    |
-| guest3_rank  | integer    | null: false                    |
-| user_point   | integer    | null: false                    |
-| guest1_point | integer    | null: false                    |
-| guest2_point | integer    | null: false                    |
-| guest3_point | integer    | null: false                    |
-| user_id      | references | null: false, foreign_key: true |
-| game_id      | references | null: false, foreign_key: true |
+| Column          | Type       | Options                        |
+| --------------- | ---------- | ------------------------------ |
+| user_score      | integer    | null: false                    |
+| guest1_score    | integer    | null: false                    |
+| guest2_score    | integer    | null: false                    |
+| guest3_score    | integer    | null: false                    |
+| user_rank_id    | integer    | null: false                    |
+| guest1_rank_id  | integer    | null: false                    |
+| guest2_rank_id  | integer    | null: false                    |
+| guest3_rank_id  | integer    | null: false                    |
+| user_point      | integer    | null: false                    |
+| guest1_point    | integer    | null: false                    |
+| guest2_point    | integer    | null: false                    |
+| guest3_point    | integer    | null: false                    |
+| user_id         | references | null: false, foreign_key: true |
+| game_id         | references | null: false, foreign_key: true |
 
 ### Association
 
