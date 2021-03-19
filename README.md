@@ -1,11 +1,3 @@
-# Mahjong Score & Data
-
-
-
-
-
-
-
 # テーブル設計
 
 ## users テーブル
