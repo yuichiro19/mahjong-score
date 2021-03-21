@@ -4,6 +4,7 @@ class Game < ApplicationRecord
     belongs_to :rank_bonus
     belongs_to :rate
     belongs_to :top_bonus
+    has_many :scores
 
     with_options presence: true do
         validates :guest1
