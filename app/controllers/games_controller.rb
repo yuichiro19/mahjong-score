@@ -10,7 +10,7 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(game_params)
     if @game.save
-      redirect_to root_path
+      redirect_to new_game_score_path(@game.id)
     else
       render :new
     end
