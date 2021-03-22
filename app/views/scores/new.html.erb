@@ -9,11 +9,11 @@
 <tr>
 <%= form_with(model: [@game, @score], local: true) do |f| %>
 <tr>
-<th><%= f.number_field :user_score %></th>
-<th><%= f.number_field :guest1_score %></th>
-<th><%= f.number_field :guest2_score %></th>
-<th><%= f.number_field :guest3_score %></th>
-<th><%= f.submit "記入"%></th>
+<td><%= f.number_field :user_score, value: 25000 %></td>
+<td><%= f.number_field :guest1_score, value: 25000 %></td>
+<td><%= f.number_field :guest2_score, value: 25000 %></td>
+<td><%= f.number_field :guest3_score, value: 25000 %></td>
+<td><%= f.submit "記入"%></td>
 </tr>
 <% end %> 
 
