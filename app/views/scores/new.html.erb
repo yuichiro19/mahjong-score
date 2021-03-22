@@ -1,10 +1,11 @@
 <h2>スコア入力</h2>
-<table border="1">
+<table border>
 <tr>
 <th><%= current_user.name%></th>
 <th><%= @game.guest1 %></th>
 <th><%= @game.guest2 %></th>
 <th><%= @game.guest3 %></th>
+<th></th>
 <tr>
 <%= form_with(model: [@game, @score], local: true) do |f| %>
 <tr>
@@ -12,6 +13,7 @@
 <th><%= f.number_field :guest1_score %></th>
 <th><%= f.number_field :guest2_score %></th>
 <th><%= f.number_field :guest3_score %></th>
+<th><%= f.submit "記入"%></th>
 </tr>
 <% end %> 
 
