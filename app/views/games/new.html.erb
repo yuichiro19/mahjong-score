@@ -1,5 +1,7 @@
 <h2>新規対局</h2>
 <%= form_with model: @game, local: true do |f| %>
+<%= render 'shared/error_messages', model: f.object %>
+
   <div class="member">
     <h3>メンバー</h3>
       <div class="field">
