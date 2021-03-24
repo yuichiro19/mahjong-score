@@ -2,7 +2,7 @@ class Rate < ActiveHash::Base
     include ActiveHash::Associations
     has_many :games
     self.data = [
-        { id: 1, name: "ノーレート" },
+        { id: 1, name: "ノーレート", num: 0 },
         { id: 2, name: 1, num: 10 },
         { id: 3, name: 3, num: 30 },
         { id: 4, name: 5, num: 50 },
