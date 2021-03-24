@@ -15,6 +15,9 @@ class ScoresController < ApplicationController
         end
     end
 
+    def show
+    end
+
     private 
     def set_game
         @game = Game.find(params[:game_id])
