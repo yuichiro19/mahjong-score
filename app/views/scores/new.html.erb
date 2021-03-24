@@ -1,21 +1,34 @@
 <h2>スコア入力</h2>
-<table border>
-<tr>
-<th><%= current_user.name%></th>
-<th><%= @game.guest1 %></th>
-<th><%= @game.guest2 %></th>
-<th><%= @game.guest3 %></th>
-<th></th>
-<tr>
-<%= form_with(model: [@game, @score], local: true) do |f| %>
-<tr>
-<td><%= f.number_field :user_score, value: 25000 %></td>
-<td><%= f.number_field :guest1_score, value: 25000 %></td>
-<td><%= f.number_field :guest2_score, value: 25000 %></td>
-<td><%= f.number_field :guest3_score, value: 25000 %></td>
-<td><%= f.submit "記入"%></td>
-</tr>
-<% end %> 
+<div>※同点の場合は最後に直接順位を入力してください</div>
+    <table border>
+        <tr>
+            <th><%= current_user.name%></th>
+            <th><%= @game.guest1 %></th>
+            <th><%= @game.guest2 %></th>
+            <th><%= @game.guest3 %></th>
+            <th></th>
+        <tr>
+        <%= form_with(model: [@game, @score], local: true) do |f| %>
+            <tr>
+                <td>
+                    <%= f.number_field :user_score, placeholder: "スコア入力欄", id: "user-score" %>
+                    <%= f.number_field :user_rank, placeholder: "順位", id: "user-rank" %>
+                </td>
+                <td>
+                    <%= f.number_field :guest1_score, id: "guest1-score" %>
+                    <%= f.number_field :guest1_rank, id: "guest1-rank" %>
+                </td>
+                <td>
+                    <%= f.number_field :guest2_score, id: "guest2-score" %>
+                    <%= f.number_field :guest2_rank, id: "guest2-rank" %>
+                </td>
+                <td>
+                    <%= f.number_field :guest3_score, id: "guest3-score" %>
+                    <%= f.number_field :guest3_rank, id: "guest3-rank" %>
+                </td>
+                <td><%= f.submit "記入"%></td>
+            </tr>
+        <% end %> 
 
-<table>
+    <table>
 <%= render "shared/footer"%>
