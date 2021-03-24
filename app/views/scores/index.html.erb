@@ -49,7 +49,6 @@
         <td><%= @scores.sum{|hash| hash[:guest2_point]} %></td>
         <td><%= @scores.sum{|hash| hash[:guest3_point]} %></td>
         </tr>
-
-
     <table>
+<div><%= link_to "精算", game_score_path %></div>
 <%= render "shared/footer"%>
