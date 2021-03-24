@@ -1,17 +1,17 @@
 class ScoresController < ApplicationController
     before_action :set_game
-    def new
+    def index
         @score = Score.new
+        @scores = @game.scores.includes(:game)
     end
 
     def create
         point_calc
-        binding.pry
         @score = Score.create(score_params)
         if @score.save
-            redirect_to root_path
+            redirect_to game_scores_path
         else
-            render :new
+            render :index
         end
     end
 
@@ -62,7 +62,6 @@ class ScoresController < ApplicationController
 
     def guest1_point_calc
         guest1_base_point = ((params[:score][:guest1_score].to_i - 100).round(-3) - @game.top_bonus.basic) / 1000
-        binding.pry
         if params[:score][:guest1_rank] == "2"
             params[:score][:guest1_point] = guest1_base_point + @game.rank_bonus.second_bonus
         elsif params[:score][:guest1_rank] == "3"

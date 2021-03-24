@@ -2,14 +2,27 @@
 <div>※同点の場合は最後に直接順位を入力してください</div>
     <table border>
         <tr>
+            <th></th>
             <th><%= current_user.name%></th>
             <th><%= @game.guest1 %></th>
             <th><%= @game.guest2 %></th>
             <th><%= @game.guest3 %></th>
-            <th></th>
         <tr>
+        <% @scores.each do |score| %>
+            <tr>
+                <td>
+                    <%= score.id %>
+                </td>
+                <td><%= score.user_point %></td>
+                <td><%= score.guest1_point %></td>
+                <td><%= score.guest2_point %></td>
+                <td><%= score.guest3_point %></td>
+            </tr>
+            <tr>
+        <% end%>
         <%= form_with(model: [@game, @score], local: true) do |f| %>
             <tr>
+                <td>新規</td>
                 <td>
                     <%= f.number_field :user_score, placeholder: "スコア入力欄", id: "user-score" %>
                     <%= f.number_field :user_rank, placeholder: "順位", id: "user-rank" %>
@@ -28,7 +41,15 @@
                 </td>
                 <td><%= f.submit "記入"%></td>
             </tr>
-        <% end %> 
+        <% end %>
+        <tr>
+        <td>トータル</td>
+        <td><%= @scores.sum{|hash| hash[:user_point]} %></td>
+        <td><%= @scores.sum{|hash| hash[:guest1_point]} %></td>
+        <td><%= @scores.sum{|hash| hash[:guest2_point]} %></td>
+        <td><%= @scores.sum{|hash| hash[:guest3_point]} %></td>
+        </tr>
+
 
     <table>
 <%= render "shared/footer"%>
