@@ -19,7 +19,7 @@
         <td><%= @scores.sum{|hash| hash[:user_point]} * @game.rate.num %></td>
         <td><%= @scores.sum{|hash| hash[:guest1_point]} * @game.rate.num %></td>
         <td><%= @scores.sum{|hash| hash[:guest2_point]} * @game.rate.num %></td>
-        <td><%= @scores.sum{|hash| hash[:guest1_point]} * @game.rate.num%></td>
+        <td><%= @scores.sum{|hash| hash[:guest3_point]} * @game.rate.num%></td>
     </tr>
 </table>
 
