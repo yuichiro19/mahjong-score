@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_18_051109) do
+ActiveRecord::Schema.define(version: 2021_03_19_045628) do
 
   create_table "games", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "guest1", null: false
@@ -24,6 +24,27 @@ ActiveRecord::Schema.define(version: 2021_03_18_051109) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_games_on_user_id"
+  end
+
+  create_table "scores", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_score", null: false
+    t.integer "guest1_score", null: false
+    t.integer "guest2_score", null: false
+    t.integer "guest3_score", null: false
+    t.integer "user_rank", null: false
+    t.integer "guest1_rank", null: false
+    t.integer "guest2_rank", null: false
+    t.integer "guest3_rank", null: false
+    t.integer "user_point", null: false
+    t.integer "guest1_point", null: false
+    t.integer "guest2_point", null: false
+    t.integer "guest3_point", null: false
+    t.bigint "user_id", null: false
+    t.bigint "game_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_id"], name: "index_scores_on_game_id"
+    t.index ["user_id"], name: "index_scores_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -40,4 +61,6 @@ ActiveRecord::Schema.define(version: 2021_03_18_051109) do
   end
 
   add_foreign_key "games", "users"
+  add_foreign_key "scores", "games"
+  add_foreign_key "scores", "users"
 end
