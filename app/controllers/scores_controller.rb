@@ -1,8 +1,9 @@
 class ScoresController < ApplicationController
     before_action :set_game
+    before_action :set_scores, only: [:index, :show]
+
     def index
         @score = Score.new
-        @scores = @game.scores.includes(:game)
     end
 
     def create
@@ -21,6 +22,10 @@ class ScoresController < ApplicationController
     private 
     def set_game
         @game = Game.find(params[:game_id])
+    end
+
+    def set_scores
+        @scores = @game.scores.includes(:game)
     end
 
     def score_params
