@@ -7,7 +7,7 @@
             <th><%= @game.guest1 %></th>
             <th><%= @game.guest2 %></th>
             <th><%= @game.guest3 %></th>
-        <tr>
+        </tr>
         <% @scores.each do |score| %>
             <tr>
                 <td>
@@ -49,7 +49,6 @@
         <td><%= @scores.sum{|hash| hash[:guest2_point]} %></td>
         <td><%= @scores.sum{|hash| hash[:guest3_point]} %></td>
         </tr>
-
-
     <table>
+<div><%= link_to "精算", game_score_path(id: @game.scores) %></div>
 <%= render "shared/footer"%>

@@ -1,0 +1,26 @@
+<h2>対戦結果</h2>
+<table border>
+    <tr>
+        <th></th>
+        <th><%= current_user.name%></th>
+        <th><%= @game.guest1 %></th>
+        <th><%= @game.guest2 %></th>
+        <th><%= @game.guest3 %></th>
+    </tr>
+    <tr>
+        <td>ポイント</td>
+        <td><%= @scores.sum{|hash| hash[:user_point]} %></td>
+        <td><%= @scores.sum{|hash| hash[:guest1_point]} %></td>
+        <td><%= @scores.sum{|hash| hash[:guest2_point]} %></td>
+        <td><%= @scores.sum{|hash| hash[:guest3_point]} %></td>
+    </tr>
+    <tr>
+        <td>収支</td>
+        <td><%= @scores.sum{|hash| hash[:user_point]} * @game.rate.num %></td>
+        <td><%= @scores.sum{|hash| hash[:guest1_point]} * @game.rate.num %></td>
+        <td><%= @scores.sum{|hash| hash[:guest2_point]} * @game.rate.num %></td>
+        <td><%= @scores.sum{|hash| hash[:guest3_point]} * @game.rate.num%></td>
+    </tr>
+</table>
+
+<%= render "shared/footer"%>
