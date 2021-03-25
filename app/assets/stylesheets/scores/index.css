@@ -1,0 +1,41 @@
+.alert{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.cell-1{
+    width: 12vw;
+}
+
+.cell-2, .cell-3, .cell-4, .cell-5{
+    width: 20vw;
+}
+
+.score-form{
+    text-align: center;
+}
+
+.total-score{
+    text-align: center;
+}
+
+
+.score{
+    text-align: center;
+}
+
+.rank{
+    width: 10px;
+}
+
+.fin{
+    font-size: large;
+    text-align: center;
+    width: 200px;
+    margin: 30px auto;
+    padding: 15px;
+    border: 1px solid black;
+    background-color: darkgray;
+    color: black;
+    display: block;
+    text-decoration: none;
+}

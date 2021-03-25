@@ -1,39 +1,39 @@
-<h2>スコア入力</h2>
-<div>※同点の場合は最後に直接順位を入力してください</div>
+<h2 class="new-game-header">スコア入力</h2>
+<div class="alert">※同点の場合は最後に直接順位を入力してください</div>
     <table border>
         <tr>
-            <th></th>
-            <th><%= current_user.name%></th>
-            <th><%= @game.guest1 %></th>
-            <th><%= @game.guest2 %></th>
-            <th><%= @game.guest3 %></th>
+            <th class="cell-1"></th>
+            <th class="cell-2"><%= current_user.name%></th>
+            <th class="cell-3"><%= @game.guest1 %></th>
+            <th class="cell-4"><%= @game.guest2 %></th>
+            <th class="cell-5"><%= @game.guest3 %></th>
         </tr>
         <% @scores.each do |score| %>
             <tr>
                 <td></td>
-                <td><%= score.user_point %></td>
-                <td><%= score.guest1_point %></td>
-                <td><%= score.guest2_point %></td>
-                <td><%= score.guest3_point %></td>
+                <td class="score"><%= score.user_point %></td>
+                <td class="score"><%= score.guest1_point %></td>
+                <td class="score"><%= score.guest2_point %></td>
+                <td class="score"><%= score.guest3_point %></td>
             </tr>
             <tr>
         <% end%>
         <%= form_with(model: [@game, @score], local: true) do |f| %>
             <tr>
-                <td>新規</td>
-                <td>
+                <td class="score-form">新規</td>
+                <td class="score">
                     <%= f.number_field :user_score, placeholder: "スコア入力欄", id: "user-score" %>
-                    <%= f.number_field :user_rank, placeholder: "順位", id: "user-rank" %>
+                    <%= f.number_field :user_rank, placeholder: "順位", id: "user-rank", calss: "rank" %>
                 </td>
-                <td>
+                <td class="score">
                     <%= f.number_field :guest1_score, id: "guest1-score" %>
                     <%= f.number_field :guest1_rank, id: "guest1-rank" %>
                 </td>
-                <td>
+                <td class="score">
                     <%= f.number_field :guest2_score, id: "guest2-score" %>
                     <%= f.number_field :guest2_rank, id: "guest2-rank" %>
                 </td>
-                <td>
+                <td class="score">
                     <%= f.number_field :guest3_score, id: "guest3-score" %>
                     <%= f.number_field :guest3_rank, id: "guest3-rank" %>
                 </td>
@@ -41,12 +41,12 @@
             </tr>
         <% end %>
         <tr>
-        <td>トータル</td>
-        <td><%= @scores.sum{|hash| hash[:user_point]} %></td>
-        <td><%= @scores.sum{|hash| hash[:guest1_point]} %></td>
-        <td><%= @scores.sum{|hash| hash[:guest2_point]} %></td>
-        <td><%= @scores.sum{|hash| hash[:guest3_point]} %></td>
+        <td class="total-score">トータル</td>
+        <td class="score"><%= @scores.sum{|hash| hash[:user_point]} %></td>
+        <td class="score"><%= @scores.sum{|hash| hash[:guest1_point]} %></td>
+        <td class="score"><%= @scores.sum{|hash| hash[:guest2_point]} %></td>
+        <td class="score"><%= @scores.sum{|hash| hash[:guest3_point]} %></td>
         </tr>
     <table>
-<div><%= link_to "精算", game_score_path(id: @game.scores) %></div>
+<div><%= link_to "精算", game_score_path(id: @game.scores), class: "fin" %></div>
 <%= render "shared/footer"%>
