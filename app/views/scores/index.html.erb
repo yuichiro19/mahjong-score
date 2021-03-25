@@ -1,12 +1,12 @@
 <h2 class="new-game-header">スコア入力</h2>
 <div class="alert">※同点の場合は最後に直接順位を入力してください</div>
-    <table border>
+    <table class="table" border>
         <tr>
             <th class="cell-1"></th>
             <th class="cell-2"><%= current_user.name%></th>
-            <th class="cell-3"><%= @game.guest1 %></th>
-            <th class="cell-4"><%= @game.guest2 %></th>
-            <th class="cell-5"><%= @game.guest3 %></th>
+            <th class="cell-2"><%= @game.guest1 %></th>
+            <th class="cell-2"><%= @game.guest2 %></th>
+            <th class="cell-2"><%= @game.guest3 %></th>
         </tr>
         <% @scores.each do |score| %>
             <tr>
