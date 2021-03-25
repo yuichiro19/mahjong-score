@@ -1,4 +1,9 @@
 <h1 class="title">Mahjong Score & Data</h1>
+    <div class="user-name">
+        <% if user_signed_in? %>
+        <%= "#{current_user.name}さん、こんにちは" %>
+        <% end %>
+    </div>
     <div class="user">
         <% if user_signed_in? %>
             <%= link_to "マイページ", "#", class: "my-page" %>

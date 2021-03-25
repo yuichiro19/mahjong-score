@@ -7,6 +7,12 @@
     background-color: lightskyblue;  
 }
 
+.user-name{
+  display: flex;
+  justify-content: center;
+  color: black;
+}
+
 .user{
     font-size: 18px;
     flex-wrap: wrap;
