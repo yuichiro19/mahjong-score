@@ -1,0 +1,38 @@
+*{
+    background-color: lightgrey;
+}
+
+.title{
+    text-align: center;
+    background-color: lightsteelblue;  
+}
+
+.user-name{
+  display: flex;
+  justify-content: center;
+  color: black;
+}
+
+.user{
+    font-size: 18px;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 1vh 0;
+  }
+
+  .new-game{
+    display: flex;
+    justify-content: center;
+  }
+
+.new-game-btn, .my-page, .logout, .new-user, .login{
+    text-align: center;
+    width: 200px;
+    margin: 15px auto;
+    padding: 15px;
+    border: 1px solid black;
+    background-color: darkgray;
+    color: black;
+    display: block;
+    text-decoration: none;
+}

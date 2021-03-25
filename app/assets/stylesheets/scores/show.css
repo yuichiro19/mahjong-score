@@ -1,0 +1,19 @@
+.result-header{
+    text-align: center;
+    background-color: lightslategrey;
+    margin-bottom: 40px;
+}
+.cell-1-result{
+    width: 12vw;
+}
+
+.cell-2-result{
+    width: 22vw;
+}
+.point{
+    text-align: center;
+}
+
+.money{
+    text-align: center;
+}

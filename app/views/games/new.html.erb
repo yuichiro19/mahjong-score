@@ -1,9 +1,8 @@
-<h2>新規対局</h2>
+<h2 class="new-game-header">新規対局</h2>
 <%= form_with model: @game, local: true do |f| %>
 <%= render 'shared/error_messages', model: f.object %>
 
-  <div class="member">
-    <h3>メンバー</h3>
+    <h3 class="member">メンバー</h3>
       <div class="field">
         <%= f.label :guest1, "ゲスト1" %><br />
         <%= f.text_field :guest1, autofocus: true %>
@@ -16,10 +15,8 @@
         <%= f.label :guest3, "ゲスト3" %><br />
         <%= f.text_field :guest3 %>
       </div>
-  </div>
-  <div class="game-rule">
     <div class="weight-bold-text question-text">
-      <h3>ゲームルール</h3>
+      <h3 class="game-rule">ゲームルール</h3>
     </div>
     <div class="form">
       <div class="weight-bold-text">
@@ -39,10 +36,8 @@
       </div>
       <%= f.number_field :chip, value: 0 %>
     </div>
-  </div>
-  <div class="sell-btn-contents">
-    <%= f.submit "開局" ,class:"sell-btn" %>
-    <%=link_to 'もどる', root_path, class:"back-btn" %>
+  <div class="new-btn-contents">
+    <%= f.submit "開局" ,class:"new-btn" %>
   </div>
 <% end %>
 
