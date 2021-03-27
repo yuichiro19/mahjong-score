@@ -1,6 +1,7 @@
 class ScoresController < ApplicationController
     before_action :set_game
     before_action :set_scores, only: [:index, :show]
+    before_action :authenticate_user!
 
     def index
         @score = Score.new
