@@ -8,13 +8,15 @@
             <th class="cell-2"><%= @game.guest2 %></th>
             <th class="cell-2"><%= @game.guest3 %></th>
         </tr>
+        <% i = 1 %>
         <% @scores.each do |score| %>
             <tr>
-                <td></td>
+                <td class="score"><%= i %></td>
                 <td class="score"><%= score.user_point %></td>
                 <td class="score"><%= score.guest1_point %></td>
                 <td class="score"><%= score.guest2_point %></td>
                 <td class="score"><%= score.guest3_point %></td>
+                <% i += 1 %>
             </tr>
             <tr>
         <% end%>
