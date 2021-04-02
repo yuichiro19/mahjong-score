@@ -1,7 +1,20 @@
 <h2 class="mypage-header"><%=@user.name%>さんの戦績</h2>
-
-<%= ave_scores(:user_score).round %>
-<%= ave_scores(:user_point) %>
-<%= ave_scores(:user_rank) %>
-
+<table class="scores-table" border>
+    <tr>
+        <td class="category">総対戦数</td>
+        <td class="scores-data"><%= @scores.length %></td>
+    </tr>
+    <tr>
+        <td class="category">平均得点</td>
+        <td class="scores-data"><%= ave_scores(:user_score).round %></td>
+    </tr>
+    <tr>
+        <td class="category">平均ポイント</td>
+        <td class="scores-data"><%= ave_scores(:user_point) %></td>
+    </tr>
+    <tr>
+        <td class="category">平均順位</td>
+        <td class="scores-data"><%= ave_scores(:user_rank) %></td>
+    </tr>
+</table>
 <%=render "shared/footer"%>
