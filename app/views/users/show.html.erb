@@ -1,3 +1,7 @@
-<h2 class="mypage-header"><%=current_user.name%>さんの戦績</h2>
+<h2 class="mypage-header"><%=@user.name%>さんの戦績</h2>
+
+<%= ave_scores(:user_score).round %>
+<%= ave_scores(:user_point) %>
+<%= ave_scores(:user_rank) %>
 
 <%=render "shared/footer"%>
