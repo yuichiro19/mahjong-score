@@ -3,9 +3,9 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
         @scores = @user.scores
     end
-end
 
-private
-def ave_scores(a)
-    @scores.sum{|hash| hash[a]}.fdiv(@scores.length).round(2)
+    private
+    def ave_scores(a)
+        @scores.sum{|hash| hash[a]}.fdiv(@scores.length).round(2)
+    end
 end
