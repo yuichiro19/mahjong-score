@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     end
 
     private
-    def ave_scores(a)
-        @scores.sum{|hash| hash[a]}.fdiv(@scores.length).round(2)
+    def ave_scores(key)
+        @scores.sum{|hash| hash[key]}.fdiv(@scores.length).round(2)
     end
 end
