@@ -1,0 +1,14 @@
+.mypage-header{
+    text-align: center;
+    background-color: bisque;
+}
+.scores-table{
+    margin: 0 auto;
+    text-align: center;
+}
+.category{
+    width: 15vw;
+}
+.scores-data{
+    width: 15vw;
+}
