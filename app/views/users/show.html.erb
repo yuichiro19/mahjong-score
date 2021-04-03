@@ -19,38 +19,22 @@
     <tr>
         <td class="category">一位率</td>
         <td calss="scores-data">
-            <% user_ranks = []%>
-            <% @scores.each do |rank| %>
-            <% user_ranks << rank[:user_rank]%>
-            <% end %>
-            <%= (user_ranks.count(1) * 100).fdiv(@scores.length).round(2) %>%</td>
+            <%= (@user_ranks.count(1) * 100).fdiv(@scores.length).round(2) %>%</td>
     </tr>
-        <tr>
+    <tr>
         <td class="category">二位率</td>
         <td calss="scores-data">
-            <% user_ranks = []%>
-            <% @scores.each do |rank| %>
-            <% user_ranks << rank[:user_rank]%>
-            <% end %>
-            <%= (user_ranks.count(2) * 100).fdiv(@scores.length).round(2) %>%</td>
+            <%= (@user_ranks.count(2) * 100).fdiv(@scores.length).round(2) %>%</td>
     </tr>
-        <tr>
+    <tr>
         <td class="category">三位率</td>
         <td calss="scores-data">
-            <% user_ranks = []%>
-            <% @scores.each do |rank| %>
-            <% user_ranks << rank[:user_rank]%>
-            <% end %>
-            <%= (user_ranks.count(3) * 100).fdiv(@scores.length).round(2) %>%</td>
+            <%= (@user_ranks.count(3) * 100).fdiv(@scores.length).round(2) %>%</td>
     </tr>
-        <tr>
+    <tr>
         <td class="category">四位率</td>
         <td calss="scores-data">
-            <% user_ranks = []%>
-            <% @scores.each do |rank| %>
-            <% user_ranks << rank[:user_rank]%>
-            <% end %>
-            <%= (user_ranks.count(4) * 100).fdiv(@scores.length).round(2) %>%</td>
+            <%= (@user_ranks.count(4) * 100).fdiv(@scores.length).round(2) %>%</td>
     </tr>
 </table>
 <%=render "shared/footer"%>
