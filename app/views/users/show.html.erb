@@ -1,4 +1,4 @@
-<h2 class="mypage-header"><%=@user.name%>さんの戦績</h2>
+<h2 class="mypage-header"><%=@user.name%>さんの対戦戦績</h2>
 <table class="scores-table" border>
     <tr>
         <td class="category">総対戦数</td>
@@ -6,15 +6,51 @@
     </tr>
     <tr>
         <td class="category">平均得点</td>
-        <td class="scores-data"><%= ave_scores(:user_score).round %></td>
+        <td class="scores-data"><%= @scores.sum{|hash| hash[:user_score]}.fdiv(@scores.length).round %></td>
     </tr>
     <tr>
         <td class="category">平均ポイント</td>
-        <td class="scores-data"><%= ave_scores(:user_point) %></td>
+        <td class="scores-data"><%= @scores.sum{|hash| hash[:user_point]}.fdiv(@scores.length).round(2) %></td>
     </tr>
     <tr>
         <td class="category">平均順位</td>
-        <td class="scores-data"><%= ave_scores(:user_rank) %></td>
+        <td class="scores-data"><%= @scores.sum{|hash| hash[:user_rank]}.fdiv(@scores.length).round(2) %></td>
+    </tr>
+    <tr>
+        <td class="category">一位率</td>
+        <td calss="scores-data">
+            <% user_ranks = []%>
+            <% @scores.each do |rank| %>
+            <% user_ranks << rank[:user_rank]%>
+            <% end %>
+            <%= (user_ranks.count(1) * 100).fdiv(@scores.length).round(2) %>%</td>
+    </tr>
+        <tr>
+        <td class="category">二位率</td>
+        <td calss="scores-data">
+            <% user_ranks = []%>
+            <% @scores.each do |rank| %>
+            <% user_ranks << rank[:user_rank]%>
+            <% end %>
+            <%= (user_ranks.count(2) * 100).fdiv(@scores.length).round(2) %>%</td>
+    </tr>
+        <tr>
+        <td class="category">三位率</td>
+        <td calss="scores-data">
+            <% user_ranks = []%>
+            <% @scores.each do |rank| %>
+            <% user_ranks << rank[:user_rank]%>
+            <% end %>
+            <%= (user_ranks.count(3) * 100).fdiv(@scores.length).round(2) %>%</td>
+    </tr>
+        <tr>
+        <td class="category">四位率</td>
+        <td calss="scores-data">
+            <% user_ranks = []%>
+            <% @scores.each do |rank| %>
+            <% user_ranks << rank[:user_rank]%>
+            <% end %>
+            <%= (user_ranks.count(4) * 100).fdiv(@scores.length).round(2) %>%</td>
     </tr>
 </table>
 <%=render "shared/footer"%>
