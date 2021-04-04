@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
-  
+
   def index
   end
 
@@ -20,7 +20,7 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:guest1, :guest2, :guest3, :rank_bonus_id, :top_bonus_id, :rate_id, :chip ).merge(user_id: current_user.id)
+    params.require(:game).permit(:guest1, :guest2, :guest3, :rank_bonus_id, :top_bonus_id, :rate_id,
+                                 :chip).merge(user_id: current_user.id)
   end
-
 end
