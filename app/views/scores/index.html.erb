@@ -17,6 +17,7 @@
                     <td class="score"><%= score.guest1_point %></td>
                     <td class="score"><%= score.guest2_point %></td>
                     <td class="score"><%= score.guest3_point %></td>
+                    <td><%= link_to "削除", game_score_path(game_id: @game.id, id: score.id), method: :delete %></td>
                     <% i += 1 %>
                 </tr>
             <% end %>
