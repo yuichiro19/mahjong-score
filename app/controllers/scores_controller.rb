@@ -20,6 +20,9 @@ class ScoresController < ApplicationController
   def show
   end
 
+  def destroy
+  end
+
   private
 
   def set_game
