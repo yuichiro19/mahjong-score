@@ -21,6 +21,9 @@ class ScoresController < ApplicationController
   end
 
   def destroy
+    score = Score.find(params[:id])
+    score.destroy
+    redirect_to game_scores_path
   end
 
   private
