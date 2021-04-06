@@ -121,5 +121,3 @@ https://mahjong-score-34534.herokuapp.com/
 
 - belongs_to :game
 - belongs_to :user
-
-# ローカルでの動作方法

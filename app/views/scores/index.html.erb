@@ -8,17 +8,18 @@
             <th class="cell-2"><%= @game.guest2 %></th>
             <th class="cell-2"><%= @game.guest3 %></th>
         </tr>
-        <% i = 1 %>
-        <% @scores.each do |score| %>
-            <tr>
-                <td class="score"><%= i %></td>
-                <td class="score"><%= score.user_point %></td>
-                <td class="score"><%= score.guest1_point %></td>
-                <td class="score"><%= score.guest2_point %></td>
-                <td class="score"><%= score.guest3_point %></td>
-                <% i += 1 %>
-            </tr>
-            <tr>
+        <% if @scores.present? %>
+            <% i = 1 %>
+            <% @scores.each do |score| %>
+                <tr>
+                    <td class="score"><%= i %></td>
+                    <td class="score"><%= score.user_point %></td>
+                    <td class="score"><%= score.guest1_point %></td>
+                    <td class="score"><%= score.guest2_point %></td>
+                    <td class="score"><%= score.guest3_point %></td>
+                    <% i += 1 %>
+                </tr>
+            <% end %>
         <% end%>
         <%= form_with(model: [@game, @score], local: true) do |f| %>
             <tr>
@@ -42,13 +43,15 @@
                 <td><%= f.submit "記入"%></td>
             </tr>
         <% end %>
-        <tr>
-        <td class="total-score">トータル</td>
-        <td class="score"><%= @scores.sum{|hash| hash[:user_point]} %></td>
-        <td class="score"><%= @scores.sum{|hash| hash[:guest1_point]} %></td>
-        <td class="score"><%= @scores.sum{|hash| hash[:guest2_point]} %></td>
-        <td class="score"><%= @scores.sum{|hash| hash[:guest3_point]} %></td>
-        </tr>
+        <% if @scores.present? %>
+            <tr>
+                <td class="total-score">トータル</td>
+                <td class="score"><%= @scores.sum{|hash| hash[:user_point]} %></td>
+                <td class="score"><%= @scores.sum{|hash| hash[:guest1_point]} %></td>
+                <td class="score"><%= @scores.sum{|hash| hash[:guest2_point]} %></td>
+                <td class="score"><%= @scores.sum{|hash| hash[:guest3_point]} %></td>
+            </tr>
+        <% end %>
     <table>
 <div><%= link_to "精算", game_score_path(id: @game.scores), class: "fin" %></div>
 <%= render "shared/footer"%>
