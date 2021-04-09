@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   root to: "games#index"
   resources :users, only: :show
   resources :games, only: [:index, :new, :create] do
-    resources :scores, only: [:index, :create, :show]
+    resources :scores, only: [:index, :create, :show, :destroy]
   end
 end
